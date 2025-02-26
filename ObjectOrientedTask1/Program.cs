@@ -1,33 +1,28 @@
 ﻿
-using ObjectOrientedTask1.Employees;
-using ObjectOrientedTask1.Factory;
-using static ObjectOrientedTask1.Employees.Employee;
+using ConsoleApp1.Factory;
+using static ConsoleApp1.Emplyees.Employee;
 
 try
 {
     IEmployeeFactory employeeFactory = new EmployeeFactory();
 
 
-    var employee = employeeFactory.CreateEmployee(EmployeeType.CEO
+    var employee = employeeFactory.CreateEmployee(EmployeeType.SimpleEmployee
         , "Amirhossein", "Azarakhsh"
         , nationalId: "0200468529"
-        , level: 1, baseSalary: 300, totalHours: 160,
-          extraHours: 6);
+        ,  baseSalary: 30);
 
 
-    decimal salary = employee.CalculateSalary();
+    decimal salary = employee.CalculateSalary(1, 30, 160, 6, 1.0m);
 
 
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine($"FullName: {employee.FullName} ");
+    
+    Console.WriteLine(employee);
 
-    Console.ForegroundColor = ConsoleColor.White;
-    Console.WriteLine($"National code:{employee.NationalCode} ");
-    Console.ResetColor();
-
-    Console.ForegroundColor = ConsoleColor.Red;
+    Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine($"Salary: {salary:C0}");
     Console.ResetColor();
+    Console.ReadKey();
 
 }
 catch (Exception ex)
