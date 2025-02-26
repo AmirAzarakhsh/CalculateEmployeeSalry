@@ -1,6 +1,6 @@
 ﻿
-using ConsoleApp1.Factory;
-using static ConsoleApp1.Emplyees.Employee;
+using ObjectOrientedTask1.Factory;
+using static ObjectOrientedTask1.Emplyees.Employee;
 
 try
 {
