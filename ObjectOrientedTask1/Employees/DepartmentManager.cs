@@ -4,27 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectOrientedTask1.Employees
+namespace ObjectOrientedTask1.Employees;
+
+public class DepartmentManager : Employee
 {
-    public class DepartmentManager : Employee
-    {
-        public DepartmentManager(string fname, string lname, string nationalId, int level, decimal baseSalary,
-            decimal totalHours, decimal extraHours, decimal employeeRatio = 1.8m)
-        : base(fname, lname, nationalId, level, baseSalary, totalHours, extraHours, employeeRatio) {
-            this.BaseSalary = baseSalary;
-            this.Level = level;
-            this.EmployeeRatio = employeeRatio;
-            this.TotalHourInMonth = totalHours;
-            this.ExtraTimePerHours = extraHours;
-        
-        }
-
-        internal override decimal CalculateSalary()
+        public DepartmentManager(string fname, string lname, string nationalId, decimal basesalary) : base(fname, lname, nationalId)
         {
-            decimal salary = BaseSalary * Level * EmployeeRatio * TotalHourInMonth;
-            decimal Extra = BaseSalary * ExtraTimePerHours * Level * EmployeeRatio * 1.2m;
-
-            return salary + Extra;
         }
-    }
+        internal override decimal CalculateSalary(int level, decimal baseSalary, decimal totalHours, decimal extraHours, decimal employeeRatio =2)
+        {
+                return base.CalculateSalary(level, baseSalary, totalHours, extraHours, employeeRatio);
+        }
 }
