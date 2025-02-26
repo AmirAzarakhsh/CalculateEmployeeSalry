@@ -13,7 +13,7 @@ try
         ,  baseSalary: 30);
 
 
-    decimal salary = employee.CalculateSalary(1, 30, 160, 6, 1.0m);
+    decimal salary = employee.CalculateSalary(1, 30, 160, 6 );
 
 
     
