@@ -1,18 +1,13 @@
-﻿using ObjectOrientedTask1.Employees;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ObjectOrientedTask1.Employees.Employee;
+using ObjectOrientedTask1.Emplyees;
+using static ObjectOrientedTask1.Emplyees.Employee;
 
-namespace ObjectOrientedTask1.Factory
+namespace ConsoleApp1.Factory;
+
+interface IEmployeeFactory
 {
-    interface IEmployeeFactory
-    {
-        Employee CreateEmployee(EmployeeType type  , string fname
-            , string lname
-            , string nationalId
-            , int level, decimal baseSalary, decimal totalHours, decimal extraHours = 0 );
-    }
+    Employee CreateEmployee(EmployeeType type, string fname
+        , string lname
+        , string nationalId
+        , decimal baseSalary);
 }
+
