@@ -1,7 +1,6 @@
-﻿
-namespace ObjectOrientedTask1.Employees
-{
-    public abstract class Employee
+﻿namespace ObjectOrientedTask1.Employees;
+
+public abstract class Employee
 {
     protected Employee(string fname
        , string lname
@@ -45,3 +44,4 @@ namespace ObjectOrientedTask1.Employees
         return $"FullName : {FullName}\nNationalId : {NationalCode}";
     }
 }
+
